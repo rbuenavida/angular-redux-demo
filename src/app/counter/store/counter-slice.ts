@@ -14,7 +14,7 @@ const initialState: CounterState = {
 }
 
 export const fetchPosts:any = createAsyncThunk('counter/fetchPosts', async () => {
-  console.log('in fetchPosts')
+  console.log('in fetchPosts thunk')
   const response: any = await fetch('https://jsonplaceholder.typicode.com/users/1/posts')
   const posts = await response.json();
   return posts

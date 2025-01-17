@@ -1,0 +1,36 @@
+
+REACT
+const mainBtnItems = useSelector((state) => selectCurrentFormBlockParameter(state, "mainBtn", "items"));
+if (!mainBtnItems || !dataSource) {
+  return <div>Loading...</div>;
+}
+  
+let's say we wanted to do something like this
+whenever the state changes, some postTitles variable would contain the latest values from the state
+Angular template would have the changes reflected in the dom but how can we have it in the component logic?
+would like to use the postTitles inside the component logic with updated redux values
+
+ANGULAR
+postTitles = injectSelector((state: RootState) => {
+  const titles = Object.entries(state.counter.posts).map((post, index) => state.counter.posts[index].title)
+  return titles;
+});
+
+// for instace how to acheive this ?
+if (!postTitles) {
+  console.log('no post titles yet..')
+} else {
+  console.log('post title exist now', postTitles)
+}
+An answer i found was to use the signal with either effect or rxjs observable
+
+REACT HOOK example
+export function useCanvaItems(canva) {
+  const blocks = useSelector((state) => selectAllCurrentFormBlocks(state));
+  const currentRecord = useSelector((state) => selectCurrentRecord(state));
+
+  const propToCheck = currentRecord !== 0 ? "update_allowed" : "insert_allowed";
+
+  const gridItems = useMemo(() => {
+  })
+}
