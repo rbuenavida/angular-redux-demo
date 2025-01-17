@@ -1,20 +1,13 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideStore } from '@ngrx/store';
-import { provideEffects } from '@ngrx/effects';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { rootReducer } from './store';
-
 import { routes } from './app.routes';
+import { provideRedux } from '@reduxjs/angular-redux';
+import { store } from './counter/store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-
-    // Setup NGRX:
-    provideStore(rootReducer),
-    provideEffects([]),
-    provideStoreDevtools()
+    provideRedux({ store })
   ]
 };

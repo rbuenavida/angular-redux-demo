@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CounterComponent } from './counter.component';
+import { CounterComponent } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import { CounterComponent } from './counter.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ngrx-demo';
+  title = 'redux-demo';
 }
