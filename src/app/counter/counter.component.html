@@ -1,11 +1,12 @@
 <button (click)="dispatch(increment())">Increment</button>
 
 <div>Current Count: {{ count() }}</div>
-<div>{{ postTitles() }}</div>
 
 <button (click)="dispatch(decrement())">Decrement</button>
 
-<button (click)="dispatch(getPosts())">getTodos</button>
-<button (click)="dispatch(reset())">reset</button>
+<button (click)="dispatch(getPosts())">Show Posts</button>
+<button (click)="dispatch(reset())">Reset</button>
 
-<!-- display the list of todos that were fetched -->
+<ul>
+    <li *ngFor="let postTitle of postTitles$ | async">{{ postTitle.title }}</li>
+</ul>
