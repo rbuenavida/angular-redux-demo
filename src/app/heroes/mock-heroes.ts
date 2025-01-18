@@ -1,1 +1,0 @@
-export const HEROES = ['Spiderman', 'Superman', 'Batman']
