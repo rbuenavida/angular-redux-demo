@@ -16,6 +16,7 @@ import { decrement, increment, reset, fetchPosts } from "./store/counter-slice";
 
 @Component({
   selector: "counter-component",
+  standalone: true,
   imports: [AsyncPipe, NgForOf],
   templateUrl: './counter.component.html',
 })

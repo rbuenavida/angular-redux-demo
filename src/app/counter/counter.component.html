@@ -1,11 +1,11 @@
-<button (click)="dispatch(increment())">Increment</button>
+<button type="button" (click)="dispatch(increment())" class="btn btn-outline-primary">Increment</button>
 
 <div>Current Count: {{ count() }}</div>
 
-<button (click)="dispatch(decrement())">Decrement</button>
+<button type="button" (click)="dispatch(decrement())" class="btn btn-outline-primary">Decrement</button>
 
-<button (click)="dispatch(getPosts())">Show Posts</button>
-<button (click)="dispatch(reset())">Reset</button>
+<button type="button" (click)="dispatch(getPosts())" class="btn btn-outline-primary">Show Posts</button>
+<button type="button" (click)="dispatch(reset())" class="btn btn-outline-primary">Reset</button>
 
 <ul>
     <li *ngFor="let postTitle of postTitles$ | async">{{ postTitle.title }}</li>
